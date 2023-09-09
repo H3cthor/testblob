@@ -14,7 +14,7 @@ export default function AvatarUploadPage() {
         onSubmit={async (event) => {
           event.preventDefault()
 
-          const file = inputFileRef.current.files[0]
+          const file = event.currentTarget.files[0]//inputFileRef.current.files[0]
 
           const response = await fetch(
             `/api/avatar/upload?filename=${file.name}`,
@@ -29,7 +29,7 @@ export default function AvatarUploadPage() {
           setBlob(newblob)
         }}
       >
-        <input name="file" ref={inputFileRef} type="file" required />
+        <input name="file" /*ref={inputFileRef}*/ type="file" required />
         <button type="submit">Upload</button>
       </form>
       {blob && (
