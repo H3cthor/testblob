@@ -28,10 +28,10 @@ export default function Index() {
 
   // const [base64, setBase64] = useState(null) as any
 
-  const handleFileChange = async (event) => {
-    event.preventDefault()
+  const handleFileChange = async (e: any) => {
+    e.preventDefault()
 
-    const file = event.target.files[0]
+    const file = e.target.files[0]
     if (!file) return
 
     setLoading(true)
