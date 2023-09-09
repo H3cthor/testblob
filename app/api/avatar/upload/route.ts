@@ -2,12 +2,12 @@ import { put } from '@vercel/blob'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request): Promise<NextResponse> {
-  const { searchParams } = new URL(request.url)
-  const filename = searchParams.get('filename') 
+//   const { searchParams } = new URL(request.url)
+//   const filename = searchParams.get('filename') 
 
-  console.log(`Valor de filename: ${filename}`)
+//   console.log(`Valor de filename: ${filename}`)
 
-  const blob = await put(filename!, request.body!, {
+  const blob = await put(/*filename!*/'miarchivo.jpg', request.body!, {
     access: 'public',
   })
 
