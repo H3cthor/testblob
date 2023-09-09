@@ -5,6 +5,8 @@ export async function POST(request: Request): Promise<NextResponse> {
   const { searchParams } = new URL(request.url)
   const filename = searchParams.get('filename') 
 
+  console.log(`Valor de filename: ${filename}`)
+
   const blob = await put(filename!, request.body!, {
     access: 'public',
   })
